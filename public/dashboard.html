@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="User Dashboard - Google OAuth Module" />
+  <title>Dashboard - Google OAuth Module</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <main class="auth-card" id="dashboardCard">
+    <!-- Skeleton Loading State -->
+    <div id="loadingSkeleton">
+      <div class="skeleton skeleton-avatar"></div>
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-subtitle"></div>
+    </div>
+
+    <!-- Authenticated User Profile Content -->
+    <div id="userContent" style="display: none;">
+      <div class="user-avatar-wrapper">
+        <img id="userAvatar" src="" alt="User Avatar" class="user-avatar" />
+        <span class="user-status-dot" title="Authenticated Session Active"></span>
+      </div>
+
+      <h1 class="auth-title" id="userDisplayName">Loading...</h1>
+      <div class="user-email" id="userEmail">loading@example.com</div>
+
+      <div class="user-meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Google ID</span>
+          <span class="meta-value" id="userGoogleId">---</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Account Created</span>
+          <span class="meta-value" id="userCreatedAt">---</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Auth Method</span>
+          <span class="meta-value">Google OAuth 2.0</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Session Storage</span>
+          <span class="meta-value">JWT (HttpOnly Cookie)</span>
+        </div>
+      </div>
+
+      <a href="/auth/logout" class="btn-logout" id="logoutBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        Sign Out
+      </a>
+    </div>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
